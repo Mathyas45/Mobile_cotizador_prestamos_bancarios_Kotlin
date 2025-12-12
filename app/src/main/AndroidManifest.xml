@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- PERMISOS -->
+
+    <!-- Permiso para acceder a Internet (necesario para las peticiones HTTP) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Permiso para acceder al estado de la red (opcional pero útil) -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Permiso para leer archivos externos (necesario para seleccionar imágenes en Android < 13) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <!-- Permiso para leer imágenes (Android 13+) -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.CotizadorBancario">
+        
+        <!-- Splash Screen - Pantalla de inicio con el logo -->
+        <activity
+            android:name=".presentation.splash.SplashActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CotizadorBancario">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Pantalla de Clientes -->
+        <activity
+            android:name=".presentation.clientes.ClientesActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CotizadorBancario">
+        </activity>
+        
+        <!-- Pantalla de Cotización -->
+        <activity
+            android:name=".presentation.cotizacion.CotizacionActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CotizadorBancario">
+        </activity>
+        
+        <!-- Pantalla de Resultado de Cotización -->
+        <activity
+            android:name=".presentation.cotizacion.ResultadoCotizacionActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CotizadorBancario">
+        </activity>
+    </application>
+
+</manifest>
